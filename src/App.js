@@ -1,15 +1,49 @@
+import React, { useState } from "react";
+import ItemCount from "./components/Contador/ItemCount";
 import { ItemListContainer } from "./components/Items/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 
 
 function App() {
   const greeting = 'Hola a todos soy el greeting'
+
+  const [count, setCount] = useState(0)
+  const stock = 10;
+
+  const handleAumentar = () => {
+    if (count < stock) {
+      setCount(count + 1);
+    } else {
+      alert('¡Lo sentimos!No tenemos mas unidades.');
+    }
+  }
+
+  const handleRestar = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    } else {
+      alert('Por favor, seleccione al menos 1 unidad.');
+    }
+  }
+
+  const onAdd = () => {
+    console.log(count);
+  };
+
   return (
     <>
       <NavBar />
 
       <ItemListContainer greeting={greeting} bg='lightblue' pd='5px' />
       <ItemListContainer greeting='Soy otro greeting' bg='lightgreen' pd='5px' />
+
+      <h2>Contador:</h2>
+      <ItemCount
+        count={count}
+        handleAumentar={handleAumentar}
+        handleRestar={handleRestar}
+        onAdd={onAdd}
+      />
     </>
   );
 }
