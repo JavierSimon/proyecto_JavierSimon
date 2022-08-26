@@ -10,25 +10,11 @@ function App() {
   const [count, setCount] = useState(0)
   const stock = 10;
 
-  const handleAumentar = () => {
-    if (count < stock) {
-      setCount(count + 1);
-    } else {
-      alert('¡Lo sentimos!No tenemos mas unidades.');
-    }
-  }
+  const handleAumentar = () => count < stock ? setCount(count + 1) : alert('¡Lo sentimos!No tenemos mas unidades.')
 
-  const handleRestar = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    } else {
-      alert('Por favor, seleccione al menos 1 unidad.');
-    }
-  }
-
-  const onAdd = () => {
-    console.log(count);
-  };
+  const handleRestar = () => count > 0 ? setCount(count - 1) : alert('Por favor, seleccione al menos 1 unidad.')
+ 
+  const onAdd = () => console.log(count)
 
   return (
     <>
