@@ -21,8 +21,7 @@ function App() {
       <NavBar />
 
       <ItemListContainer greeting={greeting} bg='lightblue' pd='5px' />
-      <ItemListContainer greeting='Soy otro greeting' bg='lightgreen' pd='5px' />
-
+   
       <h2>Contador:</h2>
       <ItemCount
         count={count}
