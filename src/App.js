@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import ItemCount from "./components/Contador/ItemCount";
-import { ItemListContainer } from "./components/Items/ItemListContainer";
+import ItemDetailContainer from "./components/DetalleProducto/ItemDetailContainer";
+// import { ItemListContainer } from "./components/Items/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 
 
 function App() {
-  const greeting = 'Hola a todos soy el greeting'
+  // const greeting = 'Hola a todos soy el greeting'
 
   const [count, setCount] = useState(0)
   const stock = 10;
@@ -20,8 +21,8 @@ function App() {
     <>
       <NavBar />
 
-      <ItemListContainer greeting={greeting} bg='lightblue' pd='5px' />
-   
+      {/* <ItemListContainer greeting={greeting} bg='lightblue' pd='5px' /> */}
+      <ItemDetailContainer />
       <h2>Contador:</h2>
       <ItemCount
         count={count}
