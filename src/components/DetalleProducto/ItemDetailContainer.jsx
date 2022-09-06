@@ -4,15 +4,15 @@ import ItemDetail from './ItemDetail'
 
 function ItemDetailContainer() {
 
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState({})
     const [loading, setLoading] = useState(true)
     
     useEffect(()=>{
         
         setTimeout(()=>{
-            fetch('https://fakestoreapi.com/products/1')
+            fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
-            .then(json => setProducts(json))
+            .then(json => setProducts(json.find((item)=> item.id === 1)))
             .catch(error => console.log('hay un error'))
             .finally(()=>setLoading(false))
         }, 2000)
