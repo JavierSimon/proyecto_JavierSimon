@@ -24,11 +24,9 @@ function ItemDetailContainer() {
         
     }, [id])
 
-    console.log(products)
+
     return (
         <>
-
-            <h2>products</h2>
             {loading ? 'Cargando...':<ItemDetail key={products.id} products={products} />}
         </>
     )
