@@ -1,29 +1,35 @@
 
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { data } from '../../mocks/mocksData'
+
 import ItemDetail from './ItemDetail'
+
 
 function ItemDetailContainer() {
 
-    const [products, setProducts] = useState({})
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const {id} = useParams()
     
     useEffect(()=>{
         
         setTimeout(()=>{
-            fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => setProducts(json.find((item)=> item.id === 1)))
+            data
+            .then(res => {
+                setProducts(res.find(item=> item.id === id))})
             .catch(error => console.log('hay un error'))
             .finally(()=>setLoading(false))
         }, 2000)
+        
+    }, [id])
 
-    }, [])
-
-
+    console.log(products)
     return (
         <>
-            <h2>ItemDetailContainer</h2>
-            {loading? 'Cargando...':<ItemDetail key={products.id} products={products} />}
+
+            <h2>products</h2>
+            {loading ? 'Cargando...':<ItemDetail key={products.id} products={products} />}
         </>
     )
 }

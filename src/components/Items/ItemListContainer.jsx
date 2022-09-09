@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { data } from '../../mocks/mocksData'
+
 import ItemList from './ItemList'
 
 
@@ -8,10 +10,16 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
     const [items, setItems] = useState([])
     const [error, setError] = useState('')
 
+    const {categoriaId} = useParams()
+
     useEffect(() => {
-        data       
+        data     
             .then((res) => {
-                setItems(res)
+                if(categoriaId){
+                    setItems(res.filter((item)=>item.category === categoriaId))
+                } else {
+                    setItems(res)
+                }
             })
             .catch((err) => {
                 setError(err)
@@ -19,7 +27,7 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
             .finally(() => {
                 setLoading(false)
             })
-    }, [])
+    }, [categoriaId])
 
 
     return (
@@ -29,9 +37,9 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
             </div> */}
             <div>
                 {/* <h2>ItemList</h2> */}
-                <h2>Loading: {loading ? 'cargando...' : '✅'}</h2>
-                <h2>Error: {error ? error : 'Ninguno'}</h2>
-                <ItemList items={items} />
+                <div>{loading ? 'cargando...' : <ItemList items={items} />}</div>
+                <h2>{error ? error : 'Ninguno'}</h2>
+                
             </div>
         </>
     )

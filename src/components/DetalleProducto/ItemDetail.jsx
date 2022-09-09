@@ -9,14 +9,18 @@ import ItemCount from '../Contador/ItemCount';
 import { useState } from 'react';
 
 
+
 export default function ItemDetail({ products }) {
     const [count, setCount] = useState(1)
     const stock = 10;
-    const { id, image, title, description, price } = products
+    const { id, img, name, description, price } = products
+    
+  
+    
     const handleAumentar = () => count < stock ? setCount(count + 1) : alert('¡Lo sentimos!No tenemos mas unidades.')
 
     const handleRestar = () => count > 0 ? setCount(count - 1) : alert('Por favor, seleccione al menos 1 unidad.')
-   
+
     const onAdd = () => console.log(count)
     return (
         <>
@@ -26,12 +30,12 @@ export default function ItemDetail({ products }) {
                 <CardMedia
                     component="img"
                     height="30%"
-                    image={image}
-                    alt={title}
+                    image={img}
+                    alt={name}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        {title}
+                        {name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {description}
@@ -40,11 +44,11 @@ export default function ItemDetail({ products }) {
                         $ {price}
                     </Typography>
                     <ItemCount
-        count={count}
-        handleAumentar={handleAumentar}
-        handleRestar={handleRestar}
-        onAdd={onAdd}
-      />
+                        count={count}
+                        handleAumentar={handleAumentar}
+                        handleRestar={handleRestar}
+                        onAdd={onAdd}
+                    />
                 </CardContent>
             </Card>
 
