@@ -38,7 +38,7 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
             <div>
                 {/* <h2>ItemList</h2> */}
                 <div>{loading ? 'cargando...' : <ItemList items={items} />}</div>
-                <h2>{error ? error : 'Ninguno'}</h2>
+                <h2> {error ? error : false}</h2>
                 
             </div>
         </>
