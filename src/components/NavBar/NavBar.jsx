@@ -16,13 +16,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item p-2">
-                           <NavLink to='/categoria/nuevos'>Nuevos</NavLink>
+                           <NavLink to='/categoria/nuevos' style={{textDecoration: 'none', color: 'green'}}>Nuevos</NavLink>
                         </li>
                         <li className="nav-item p-2">
-                           <NavLink to='/categoria/oferta' >Ofertas</NavLink>
+                           <NavLink to='/categoria/oferta' style={{textDecoration: 'none', color: 'green'}} >Ofertas</NavLink>
                         </li>
                         <li className="nav-item p-2">
-                           <NavLink to='/categoria/vendidos' >Vendidos</NavLink>
+                           <NavLink to='/categoria/vendidos' style={{textDecoration: 'none', color: 'green'}} >Vendidos</NavLink>
                         </li>
                         
                     </ul>
