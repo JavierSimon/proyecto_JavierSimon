@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { data } from '../../mocks/mocksData'
 

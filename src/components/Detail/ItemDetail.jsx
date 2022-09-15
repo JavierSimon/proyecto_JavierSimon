@@ -2,7 +2,7 @@ import * as React from 'react';
 import ItemCount from '../Contador/ItemCount';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useCart } from '../../context/CartContext';
 
 
 export default function ItemDetail({ products }) {
@@ -11,7 +11,7 @@ export default function ItemDetail({ products }) {
     const [compra, setCompra] = useState(false)
     const { id, img, name, description, price } = products
     const navegar = useNavigate()
-
+    const {addItem} = useCart()
 
 
     const handleAumentar = () => count < stock ? setCount(count + 1) : alert('¡Lo sentimos!No tenemos mas unidades.')
@@ -20,7 +20,17 @@ export default function ItemDetail({ products }) {
 
     const onAdd = () => {
         console.log(`Compraste ${count} items del producto ${name}`)
+        let purchase = {
+            id,
+            name,
+            price,
+            stock,
+            img,
+            quantity: count
+        }
         setCompra(true)
+        addItem(purchase)
+        console.log(purchase)
     }
 
     return (
