@@ -27,7 +27,7 @@ function ItemDetailContainer() {
 
     return (
         <>
-        <div className='d-flex justify-content-center flex-wrap align-content-around'>
+        <div className='d-flex justify-content-center flex-wrap align-content-around m-1'>
         {loading ? 'Cargando...':<ItemDetail key={products.id} products={products} />}
         </div>
             

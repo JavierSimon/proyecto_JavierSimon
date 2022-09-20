@@ -1,9 +1,12 @@
 import React from 'react'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-export const CartWidget = ({ counter }) => {
+import { useCart } from '../../context/CartContext';
+
+export const CartWidget = () => {
+    const {cartQuantity} = useCart()
     return (
         <>
-            <span><ShoppingCartIcon color='warning'/> ({counter})</span>
+            <span className='btn btn-success'><ShoppingCartIcon color='warning'/> {cartQuantity() || ''}</span>
         </>
     )
 }

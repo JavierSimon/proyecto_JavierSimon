@@ -7,9 +7,9 @@ import { NavLink } from 'react-router-dom'
 const NavBar = () => {
     return (
 
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-black">
             <div className="container-fluid">
-               <NavLink to='/' style={{textDecoration: 'none', color: 'orange'}}>Ecommerce</NavLink> 
+               <NavLink to='/' style={{textDecoration: 'none', color: 'orange'}}><h1>Ecommerce</h1></NavLink> 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -26,7 +26,10 @@ const NavBar = () => {
                         </li>
                         
                     </ul>
-                    <CartWidget counter={10}/>
+                    <NavLink to='/cart'>
+                        <CartWidget />
+                    </NavLink>  
+                    
                 </div>
             </div>
         </nav>
