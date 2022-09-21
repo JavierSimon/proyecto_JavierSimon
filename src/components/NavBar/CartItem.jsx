@@ -11,6 +11,5 @@ export default function CartItem({compra}) {
             <span>Precio: $ {compra.price}</span>
             <button className='btn btn-danger' onClick={() => removeItem(compra.id)}>X</button>
         </div>
-
     )
 }
