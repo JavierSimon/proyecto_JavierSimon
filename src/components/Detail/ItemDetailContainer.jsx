@@ -3,7 +3,7 @@ import { collection, doc, getDoc } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { db } from '../../firebase/firebase'
-import { data } from '../../mocks/mocksData'
+// import { data } from '../../mocks/mocksData'
 
 import ItemDetail from './ItemDetail'
 
@@ -28,7 +28,7 @@ function ItemDetailContainer() {
             })
             .catch((error)=> console.log('error'))
             .finally(()=>setLoading(false))
-    },[])
+    },[id])
 
     // mock
     // useEffect(()=>{
