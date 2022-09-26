@@ -1,13 +1,13 @@
 import React from 'react'
 //Es hijo del navbar
 import 'bootstrap/dist/css/bootstrap.css'
-import { CartWidget } from './CartWidget'
+import { CartWidget } from '../Cart/CartWidget'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
 
-        <nav className="navbar navbar-expand-lg bg-black">
+        <nav className="navbar navbar-expand-lg bg-black sticky-top">
             <div className="container-fluid">
                <NavLink to='/' style={{textDecoration: 'none', color: 'orange'}}><h1 className='m-2'>Ecommerce</h1></NavLink> 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

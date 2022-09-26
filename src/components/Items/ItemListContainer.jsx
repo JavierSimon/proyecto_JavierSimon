@@ -55,7 +55,7 @@ export const ItemListContainer = ({ greeting, bg, pd }) => {
             {/* <div style={{ backgroundColor: bg, padding: pd }}>
                 <h2>El mensaje Greeting es: {greeting}</h2>
             </div> */}
-            <div>
+            <div >
                 {/* <h2>ItemList</h2> */}
                 <div>{loading ? 'cargando...' : <ItemList items={items} />}</div>
                 <h2> {error ? error : false}</h2>

@@ -35,7 +35,7 @@ export default function Cart() {
           <div className='d-flex justify-content-center'>
           <span className='m-1'>Total a pagar: $ {cartTotal()} </span>
           <button className='btn btn-danger m-1' onClick={clear}>Vaciar carrito</button>
-          <button className='btn btn-success m-1'> Terminar compra!</button>
+          <button className='btn btn-success m-1' onClick={()=>navegar('/order')}> Terminar compra!</button>
           </div>
           
         </div>

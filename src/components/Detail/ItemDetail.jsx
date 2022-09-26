@@ -36,7 +36,7 @@ export default function ItemDetail({ products }) {
     return (
         <>
 
-            <div className="card" style={{ width: '18rem' }} key={id}>
+            <div className="card" style={{ width: '18rem'}} key={id}>
                 <img src={img} className="card-img-top" alt={name} />
                 <div className="card-body m-1">
                     <p className="card-title">{name}</p>
