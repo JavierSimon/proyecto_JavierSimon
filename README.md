@@ -64,6 +64,7 @@ En el panel podemos acceder a firestore para empezar a diseñar nuestra capa de 
 npm install firabase
 
 ## GIF
+![proyectoJavierSimon](https://user-images.githubusercontent.com/103076956/195244313-ff3a0760-c9d0-4c22-9b9d-c3402fa38852.gif)
 
 
 ## Repositorio: 
