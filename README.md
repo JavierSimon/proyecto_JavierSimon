@@ -48,6 +48,7 @@ npm install react-router-dom
     2) catergorias (pantalones, remeras, zapatillas) -> ItemListContainer
     3) detalles -> ItemDetailContainer
     4) cart -> Cart
+    5) order -> Form
 
 ## Firabase
 Servicio provisto por Google para satisfacer las distintas necesidades que puede tener una aplicación y su ciclo de desarrollo.
