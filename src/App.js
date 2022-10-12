@@ -1,12 +1,12 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Cart from "./components/Cart/Cart";
 import ItemDetailContainer from "./components/Detail/ItemDetailContainer";
+import Footer from "./components/Footer/Footer";
 import { ItemListContainer } from "./components/Items/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Cart from "./components/Cart/Cart";
-import { CartProvider } from './context/CartContext';
-import Footer from "./components/Footer/Footer";
 import Form from "./components/Order/Form";
+import { CartProvider } from './context/CartContext';
 function App() {
 
 

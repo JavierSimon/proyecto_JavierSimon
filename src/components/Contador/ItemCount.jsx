@@ -16,7 +16,7 @@ function ItemCount({ count, handleAumentar, handleRestar, onAdd, setCount }) {
             }}> + </button>
 
             <div style={{ padding: '5px', margin: '2px' }}>
-                <button className='btn btn-primary' onClick={()=>{
+                <button className='btn btn-primary' onClick={() => {
                     onAdd()
                 }}>Agregar al Carrito</button>
             </div>

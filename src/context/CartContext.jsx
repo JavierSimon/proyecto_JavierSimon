@@ -1,10 +1,16 @@
+import { useEffect } from "react";
+
 const { createContext, useState, useContext } = require("react");
 
-//se crea el contexto y para poder usarlo hay que exportarlo
-export const CartContext = createContext()
 
+export const CartContext = createContext()
+const localStorageProducts = JSON.parse(localStorage.getItem('cart') || '[]')
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(localStorageProducts)
+
+    useEffect (()=>{
+        localStorage.setItem('cart', JSON.stringify(cart))
+    }, [cart])
 
     const addItem = (item) => {
         const existInCart = cart.find((prod) => prod.id === item.id)
@@ -49,6 +55,6 @@ export const CartProvider = ({ children }) => {
     )
 }
 
-//forma corta de llamar al context
+
 export const useCart = () => useContext(CartContext)
 
